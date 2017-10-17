@@ -76,7 +76,7 @@ class Particle {
 
           var distanceX = pos1.x - pos2.x,
               distanceY = pos1.y - pos2.y,
-              distanceMax = 200,
+              distanceMax = 150,
               dist = Math.sqrt( distanceX * distanceX + distanceY * distanceY);
 
           if (dist  < distanceMax) {
