@@ -63,11 +63,9 @@ class Particle {
 
       vec2.add(this.position, this.position, this.velocity);
 
-      for (let i = 0; i < particles.length; i++) {
-        var p = particles[i];
         var pos1 = {
-          x : p.position[0],
-          y : p.position[1]
+          x : this.position[0],
+          y : this.position[1]
         }
 
         for (let k = 0; k < particles.length; k++) {
@@ -84,21 +82,19 @@ class Particle {
           if (dist  < distanceMax) {
             ctx.globalAlpha = 1 - (dist / distanceMax);
             ctx.beginPath();
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
             ctx.moveTo(pos1.x, pos1.y);
             ctx.lineTo(pos2.x, pos2.y);
             ctx.stroke();
             ctx.closePath();
           }
-
-        }
       }
     }
 }
 
 function init() {
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 125; i++) {
 
       let particle = new Particle();
       // circle.render();
